@@ -122,13 +122,16 @@ The program, character, MCU and sound ROMs of every version are kept in SDRAM an
 
 *The arcade board.*
 
+## How it was made
+
+This core is a clean-room reverse engineering of the game, not a copy of any other core. The hardware was worked out from MAME's driver source, the ROM code itself (read and traced, for example to find where each version keeps its high score table), the Data East service and technical support manuals and schematics, the datasheets of the standard chips, and tests against MAME and against video of a real board. The three Data East custom video chips, whose insides are not in the schematics, were rebuilt from how they behave on screen. Meatflax's released core was only looked at from the outside, as a reference for how the game should look and sound; none of its code was used.
+
 ## How it was checked
 
 The video, the CPU and the MCU were compared with MAME frame by frame and instruction by instruction in simulation. The video matches MAME's screenshots exactly through the first 1,700 frames of the attract mode, and the sound level and balance were fitted to a MAME recording of real play. The overall game speed was measured against a capture of a real board and agrees to within one percent. The rotation hub is tested against an independent model, and the SDRAM paths are tested against a model of the real memory chip. The core runs on real hardware.
 
 ## Known limitations
 
-* A small number of starts show a black screen, or start a few seconds late. If that happens, reload the core. This is being investigated.
 * After roughly 1,700 frames the game state in simulation drifts from MAME by one CPU cycle (an interrupt landing one instruction away), which can move a sprite by a frame. It has not been noticed in play so far.
 * The exact positions of the sync pulses come from MAME's raster figures; the schematics keep them inside custom chips, so they were not measured on a real board.
 * The rotary control and two player play need more testing on real hardware.
@@ -138,7 +141,7 @@ The video, the CPU and the MCU were compared with MAME frame by frame and instru
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
 |:-:|---|---|
 | <img src="docs/readme/icons/person.png" height="72"> | **Meatflax** | Author of the DEC8 (DECO 8 bit) core for MiSTer, which brought Gondomania to the platform first. This core was written separately, from MAME and the original documents, and Meatflax's core served as a reference for how the game should look and sound. Thank you for the groundwork and for setting the bar |
-| <img src="docs/readme/icons/jotego.png" height="72"> | **Jose Tejada (jotego)** | The JTCORES chip cores used here: `jt65c02`, `jt03`, `jtopl`, `jt49` and the 8751 wrapper (GNU GPL v3) |
+| <img src="docs/readme/icons/jotego.png" height="72"> | **Jose Tejada (jotego)** | The JTCORES chip cores used here: `jt65c02`, `jt03`, `jtopl`, `jt49` and the 8751 wrapper (GNU GPL v3). As their headers say, the sound cores build on information posted by **Nemesis** and on **Sauraen**'s OPN/OPN2 VHDL, which is based on die shots |
 | <img src="docs/readme/icons/chip.png" height="72"> | **Oregano Systems, Roger Taylor and Greg Miller** | The original 8051 core, and the 6309 and 6809 cores |
 | <img src="docs/readme/icons/gear.png" height="72"> | **Sorgelig and the MiSTer FPGA project** | The platform framework (`sys/`, `hps_io`, `arcade_video`) and the SDRAM controller this core's `sdram.sv` is built on |
 | <img src="docs/readme/icons/doc.png" height="72"> | **The MAME project** | The driver source for the hardware and the reference used throughout |
