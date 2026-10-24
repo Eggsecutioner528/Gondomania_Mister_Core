@@ -143,7 +143,7 @@ The video, the CPU and the MCU were compared with MAME frame by frame and instru
 | <img src="docs/readme/icons/chip.png" height="72"> | **Oregano Systems, Roger Taylor and Greg Miller** | The original 8051 core, and the 6309 and 6809 cores |
 | <img src="docs/readme/icons/gear.png" height="72"> | **Sorgelig and the MiSTer FPGA project** | The platform framework (`sys/`, `hps_io`, `arcade_video`) and the SDRAM controller this core's `sdram.sv` is built on |
 | <img src="docs/readme/icons/doc.png" height="72"> | **The MAME project** | The driver source for the hardware and the reference used throughout |
-| <img src="docs/readme/icons/cabinet.png" height="72"> | **Data East** | The original 1987 arcade game, and the operation and technical support manuals that document the hardware. All game assets and ROM content remain Data East's property. The flyer, marquee, cabinet, control panel and controls pictures are scans of the original arcade material |
+| <img src="docs/readme/icons/dataeast.png" height="72"> | **Data East** | The original 1987 arcade game, and the operation and technical support manuals that document the hardware. All game assets and ROM content remain Data East's property. The flyer, marquee, cabinet, control panel and controls pictures are scans of the original arcade material |
 
 This core was developed with substantial assistance from **Claude** (Anthropic's AI assistant) and Google's **Gemini**, on this and the earlier GX7 core family this work builds on. A full list of third-party components and their licenses is in `NOTICE.md`.
 
