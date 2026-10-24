@@ -39,27 +39,13 @@ Gondomania was released in three versions, and the game was rebalanced as the re
 | <img src="docs/readme/icons/trophy.png" height="72"> | **Gold and items** | Defeated enemies turn into gold coins. When the gold you have collected is at least the price of an item, you can buy that item |
 | <img src="docs/readme/icons/pads2.png" height="72"> | **Two players** | Two players can play at the same time, and a second player can join a game in progress. There is a continue mode |
 
-![The controls of the arcade game](docs/readme/art/controls_info.png)
-
 ![The back of the Japanese flyer, translated into English](docs/readme/art/flyer_jp_back_en.jpg)
 
 *The back of the Japanese flyer (Makyou Senshi), translated into English by the author: the controls, how to play and the items. The original Japanese card is `docs/readme/art/flyer_jp_back.jpg`, and a plain text translation of both sides of the flyer is in `docs/readme/flyer_jp_back_translation.md`.*
 
-## Install
-
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
-|:-:|---|---|
-| <img src="docs/readme/icons/chip.png" height="72"> | **You need** | The MiSTer **SDRAM module** and your own legally obtained ROM sets |
-| <img src="docs/readme/icons/folder.png" height="72"> | **1. Core file** | Copy `Gondomania.rbf` to `/media/fat/_Arcade/cores/` |
-| <img src="docs/readme/icons/doc.png" height="72"> | **2. MRA file** | Copy `Gondomania.mra` to `/media/fat/_Arcade/` |
-| <img src="docs/readme/icons/zip.png" height="72"> | **3. ROM sets** | Put `gondo.zip`, `gondou.zip` and `makyosen.zip` from MAME in `/media/fat/games/mame/`. All three are needed, because the one MRA loads every version |
-| <img src="docs/readme/icons/play.png" height="72"> | **4. Play** | Start **Gondomania** from the Arcade menu |
-
-No ROM data is included in this repository.
-
 ## Controls
 
-The core uses the MiSTer controller mapping (Button 1, Button 2, Turn Left, Turn Right, Start, Coin). Map your pad in MiSTer's own **Define joystick buttons** (System menu, press Right on the main menu), then use the OSD button to leave the screen. A second pad of the same model shares that mapping and becomes player 2 when you press a button on it; a different model needs one pass of its own. There is no Service button: Service Mode is a switch in the OSD. Keyboard defaults:
+The controls and the items of the arcade game are explained on the translated flyer card above. On the MiSTer, the core uses the MiSTer controller mapping (Button 1, Button 2, Turn Left, Turn Right, Start, Coin). Map your pad in MiSTer's own **Define joystick buttons** (System menu, press Right on the main menu), then use the OSD button to leave the screen. A second pad of the same model shares that mapping and becomes player 2 when you press a button on it; a different model needs one pass of its own. There is no Service button: Service Mode is a switch in the OSD. Keyboard defaults:
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
 |:-:|---|---|
@@ -81,6 +67,18 @@ Open the OSD with the button on your controller or **F12** on a keyboard. The fi
 | <img src="docs/readme/icons/speaker.png" height="72"> | **Sound Settings** | Master, Music and Effects volume from Off up to 200 percent (100 percent is the original mix), and a Treble option |
 | <img src="docs/readme/icons/gear.png" height="72"> | **DIP Switches** | Coinage for both players, lives (including Infinite), difficulty, continues, demo sounds, flip screen |
 | <img src="docs/readme/icons/gear.png" height="72"> | **Service Mode** | Under the DIP switches. Restarts the game into its test mode when On, and back into the game when Off |
+
+## Install
+
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
+|:-:|---|---|
+| <img src="docs/readme/icons/chip.png" height="72"> | **You need** | The MiSTer **SDRAM module** and your own legally obtained ROM sets |
+| <img src="docs/readme/icons/folder.png" height="72"> | **1. Core file** | Copy `Gondomania.rbf` to `/media/fat/_Arcade/cores/` |
+| <img src="docs/readme/icons/doc.png" height="72"> | **2. MRA file** | Copy `Gondomania.mra` to `/media/fat/_Arcade/` |
+| <img src="docs/readme/icons/zip.png" height="72"> | **3. ROM sets** | Put `gondo.zip`, `gondou.zip` and `makyosen.zip` from MAME in `/media/fat/games/mame/`. All three are needed, because the one MRA loads every version |
+| <img src="docs/readme/icons/play.png" height="72"> | **4. Play** | Start **Gondomania** from the Arcade menu |
+
+No ROM data is included in this repository.
 
 ## High scores
 
