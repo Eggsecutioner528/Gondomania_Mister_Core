@@ -28,7 +28,7 @@ Gondomania was released in three versions, and the game was rebalanced as the re
 
 *The US flyer, the Japanese flyer and the upright cabinet. Gondomania, Makyou Senshi and the original artwork are Data East's.*
 
-![The control panel](docs/readme/art/control_panel.png)
+<p align="center"><img src="docs/readme/art/control_panel.png" alt="The control panel"></p>
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
 |:-:|---|---|
