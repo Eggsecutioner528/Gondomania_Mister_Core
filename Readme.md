@@ -122,7 +122,7 @@ The program, character, MCU and sound ROMs of every version are kept in SDRAM an
 
 ## How it was made
 
-This core is a clean-room reverse engineering of the game, not a copy of any other core. The hardware was worked out from MAME's driver source, the ROM code itself (read and traced, for example to find where each version keeps its high score table), the Data East service and technical support manuals and schematics, the datasheets of the standard chips, and tests against MAME and against video of a real board. The three Data East custom video chips, whose insides are not in the schematics, were rebuilt from how they behave on screen. Meatflax's released core was only looked at from the outside, as a reference for how the game should look and sound; none of its code was used.
+This core is a clean-room reverse engineering of the game, not a copy of any other core. The hardware was worked out from MAME's driver source, the ROM code itself (read and traced, for example to find where each version keeps its high score table), the Data East service and technical support manuals and schematics, the datasheets of the standard chips, and tests against MAME and against video of a real board. The three Data East custom video chips, whose insides are not in the schematics, were rebuilt from how they behave on screen. meathax's released core was only looked at from the outside, as a reference for how the game should look and sound; none of its code was used.
 
 ## How it was checked
 
@@ -138,7 +138,7 @@ The video, the CPU and the MCU were compared with MAME frame by frame and instru
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
 |:-:|---|---|
-| <img src="docs/readme/icons/person.png" height="72"> | **Meatflax** | Author of the DEC8 (DECO 8 bit) core for MiSTer, which brought Gondomania to the platform first. This core was written separately, from MAME and the original documents, and Meatflax's core served as a reference for how the game should look and sound. Thank you for the groundwork and for setting the bar |
+| <img src="docs/readme/icons/person.png" height="72"> | **MeatHax** | Author of the DEC8 (DECO 8 bit) core for MiSTer, which brought Gondomania to the platform first. This core was written separately, from MAME and the original documents, and meathax's core served as a reference for how the game should look and sound. Thank you for the groundwork and for setting the bar |
 | <img src="docs/readme/icons/jotego.png" height="72"> | **Jose Tejada (jotego)** | The JTCORES chip cores used here: `jt65c02`, `jt03`, `jtopl`, `jt49` and the 8751 wrapper (GNU GPL v3). As their headers say, the sound cores build on information posted by **Nemesis** and on **Sauraen**'s OPN/OPN2 VHDL, which is based on die shots |
 | <img src="docs/readme/icons/chip.png" height="72"> | **Oregano Systems, Roger Taylor and Greg Miller** | The original 8051 core, and the 6309 and 6809 cores |
 | <img src="docs/readme/icons/gear.png" height="72"> | **Sorgelig and the MiSTer FPGA project** | The platform framework (`sys/`, `hps_io`, `arcade_video`) and the SDRAM controller this core's `sdram.sv` is built on |
