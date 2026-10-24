@@ -38,7 +38,7 @@ def build(outdir, no_japan=False):
     zips = "gondo.zip|gondou.zip" if no_japan else gs.ZIPS
     text = ['<misterromdescription>\n    <name>Gondomania</name>\n    <setname>gondo</setname>\n    <rbf>Gondomania</rbf>\n    <mameversion>0266</mameversion>\n',
             '    <year>1987</year>\n    <manufacturer>Data East Corporation</manufacturer>\n    <category>Shooter</category>\n    <players>2</players>\n    <joystick>8-way</joystick>\n    <rotation>vertical (ccw)</rotation>\n',
-            '    <buttons names="Button 1,Button 2,Turn Left,Turn Right,Start,Coin" default="A,B,L,R,Start,Select" />\n\n',
+            '    <buttons names="Hero Attack,Bike Attack,Turn Left,Turn Right,Start,Coin" default="A,B,L,R,Start,Select" />\n\n',
             '    <!-- One core, one MRA, three versions: Gondomania (US), Gondomania (World) and Makyou Senshi (Japan).\n'
             '         Pick the version in the OSD (Game Version); the core restarts the game when it changes.\n'
             '         All the ROMs of all the versions are loaded together, in this order:\n'

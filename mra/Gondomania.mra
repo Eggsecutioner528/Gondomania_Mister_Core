@@ -10,7 +10,7 @@
     <players>2</players>
     <joystick>8-way</joystick>
     <rotation>vertical (ccw)</rotation>
-    <buttons names="Button 1,Button 2,Turn Left,Turn Right,Start,Coin" default="A,B,L,R,Start,Select" />
+    <buttons names="Hero Attack,Bike Attack,Turn Left,Turn Right,Start,Coin" default="A,B,L,R,Start,Select" />
 
     <!-- One core, one MRA, three versions: Gondomania (US), Gondomania (World) and Makyou Senshi (Japan).
          Pick the version in the OSD (Game Version); the core restarts the game when it changes.

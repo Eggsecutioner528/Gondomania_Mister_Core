@@ -33,7 +33,7 @@ Gondomania was released in three versions, and the game was rebalanced as the re
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
 |:-:|---|---|
 | <img src="docs/readme/icons/joy.png" height="72"> | **Move** | An 8-way joystick moves your air bike. Player 1 rides the blue bike and player 2 the grey one |
-| <img src="docs/readme/icons/pad.png" height="72"> | **Two weapons** | Button 1 fires the character's weapon in the direction the rotary control points. Button 2 fires the air bike's weapon straight ahead |
+| <img src="docs/readme/icons/pad.png" height="72"> | **Two weapons** | Hero Attack fires the character's weapon in the direction the rotary control points. Bike Attack fires the air bike's weapon straight ahead |
 | <img src="docs/readme/icons/rot.png" height="72"> | **Turn** | The real cabinet has a 12 position rotary joystick. On a pad, Turn Left and Turn Right step it round, and keep stepping while held |
 | <img src="docs/readme/icons/coin.png" height="72"> | **Coins and start** | Coin to add a credit, Start 1 or Start 2 to begin |
 | <img src="docs/readme/icons/trophy.png" height="72"> | **Gold and items** | Defeated enemies turn into gold coins. When the gold you have collected is at least the price of an item, you can buy that item |
@@ -45,13 +45,13 @@ Gondomania was released in three versions, and the game was rebalanced as the re
 
 ## Controls
 
-The controls and the items of the arcade game are explained on the translated flyer card above. On the MiSTer, the core uses the MiSTer controller mapping (Button 1, Button 2, Turn Left, Turn Right, Start, Coin). Map your pad in MiSTer's own **Define joystick buttons** (System menu, press Right on the main menu), then use the OSD button to leave the screen. A second pad of the same model shares that mapping and becomes player 2 when you press a button on it; a different model needs one pass of its own. There is no Service button: Service Mode is a switch in the OSD. Keyboard defaults:
+The controls and the items of the arcade game are explained on the translated flyer card above. On the MiSTer, the core uses the MiSTer controller mapping (Hero Attack, Bike Attack, Turn Left, Turn Right, Start, Coin). Map your pad in MiSTer's own **Define joystick buttons** (System menu, press Right on the main menu), then use the OSD button to leave the screen. A second pad of the same model shares that mapping and becomes player 2 when you press a button on it; a different model needs one pass of its own. There is no Service button: Service Mode is a switch in the OSD. Keyboard defaults:
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
 |:-:|---|---|
 | <img src="docs/readme/icons/key.png" height="72"> | **Coins and starts** | **5** and **6** coin 1 and 2, **1** and **2** start 1 and 2 |
 | <img src="docs/readme/icons/joy.png" height="72"> | **Move** | The arrow keys |
-| <img src="docs/readme/icons/pad.png" height="72"> | **Fire** | **Left Ctrl** is Button 1 (the arm direction), **Left Alt** is Button 2 (straight ahead) |
+| <img src="docs/readme/icons/pad.png" height="72"> | **Fire** | **Left Ctrl** is Hero Attack (the arm direction), **Left Alt** is Bike Attack (straight ahead) |
 | <img src="docs/readme/icons/rot.png" height="72"> | **Turn the arm** | **Z** is Turn Left, **X** is Turn Right |
 
 ## The OSD at a glance
@@ -130,7 +130,7 @@ The video, the CPU and the MCU were compared with MAME frame by frame and instru
 
 ## Known limitations
 
-* After roughly 1,700 frames the game state in simulation drifts from MAME by one CPU cycle (an interrupt landing one instruction away), which can move a sprite by a frame. It has not been noticed in play so far.
+* In simulation the core's attract demo matches MAME write for write for the first 1,740 frames (about 30 seconds). Then it makes one different random choice: the game reads its idle loop counter as a random number, and MAME and the core's CPU take an interrupt one cycle apart in a rare case. The difference only changes which way the demo goes, not how the game plays. Which of the two matches a real chip in that single cycle could only be settled on a real board.
 * The exact positions of the sync pulses come from MAME's raster figures; the schematics keep them inside custom chips, so they were not measured on a real board.
 * The rotary control and two player play need more testing on real hardware.
 

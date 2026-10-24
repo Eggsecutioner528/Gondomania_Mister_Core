@@ -151,7 +151,7 @@ localparam CONF_STR = {
 	"T[0],Reset;",
 	"R[0],Reset and close OSD;",
 	"v,1;",
-	"J1,Button 1,Button 2,Turn Left,Turn Right,Start,Coin;",
+	"J1,Hero Attack,Bike Attack,Turn Left,Turn Right,Start,Coin;",
 	"V,v",`BUILD_DATE
 };
 
