@@ -1,0 +1,95 @@
+<misterromdescription>
+    <!-- Gondomania for MiSTer - Copyright (C) 2026 Eggsecutioner528. Licensed under the GNU GPL, version 2 or later. Provenance mark GDM-b7843b7ed8c0 -->
+    <name>Gondomania</name>
+    <setname>gondo</setname>
+    <rbf>Gondomania</rbf>
+    <mameversion>0266</mameversion>
+    <year>1987</year>
+    <manufacturer>Data East Corporation</manufacturer>
+    <category>Shooter</category>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>vertical (ccw)</rotation>
+    <buttons names="Button 1,Button 2,Turn Left,Turn Right,Start,Coin" default="A,B,L,R,Start,Select" />
+
+    <!-- One core, one MRA, three versions: Gondomania (US), Gondomania (World) and Makyou Senshi (Japan).
+         Pick the version in the OSD (Game Version); the core restarts the game when it changes.
+         All the ROMs of all the versions are loaded together, in this order:
+           0x000000 background tile ROM (shared)
+           0x060000 US     main CPU, character ROM, sprite ROM, MCU ROM and sound ROM
+           0x119000 World  main CPU, character ROM, sprite ROM, MCU ROM and sound ROM
+           0x1D2000 Japan  main CPU, character ROM, sprite ROM, MCU ROM and sound ROM
+         The files come from gondo.zip (World, and the parts shared by every version), gondou.zip (US) and makyosen.zip (Japan);
+         all three zips must be present in the games folder (/media/fat/games/mame). -->
+
+    <!-- High scores: one 72 byte slot per version (US, World, Japan), saved by the OSD button Save High Scores, kept by the MiSTer in
+         next to its other save files (the file name follows this MRA). -->
+    <nvram index="1" size="216"/>
+
+    <rom index="0" zip="gondo.zip|gondou.zip|makyosen.zip" md5="none">
+        <!-- background tile ROM (0x60000), shared by all versions, in the order MAME builds the gfx region -->
+        <part zip="gondo.zip" name="dt08.h10" crc="aec483f5" offset="0x0" length="0x8000" />
+        <part zip="gondo.zip" name="dt09.h12" crc="446f0ce0" />
+        <part zip="gondo.zip" name="dt08.h10" crc="aec483f5" offset="0x8000" length="0x8000" />
+        <part zip="gondo.zip" name="dt06.h7" crc="3fe1527f" offset="0x0" length="0x8000" />
+        <part zip="gondo.zip" name="dt07.h9" crc="61f9bce5" />
+        <part zip="gondo.zip" name="dt06.h7" crc="3fe1527f" offset="0x8000" length="0x8000" />
+        <part zip="gondo.zip" name="dt12.h16" crc="1a72ca8d" offset="0x0" length="0x8000" />
+        <part zip="gondo.zip" name="dt13.h18" crc="ccb81aec" />
+        <part zip="gondo.zip" name="dt12.h16" crc="1a72ca8d" offset="0x8000" length="0x8000" />
+        <part zip="gondo.zip" name="dt10.h13" crc="cfcfc9ed" offset="0x0" length="0x8000" />
+        <part zip="gondo.zip" name="dt11.h15" crc="53e9cf17" />
+        <part zip="gondo.zip" name="dt10.h13" crc="cfcfc9ed" offset="0x8000" length="0x8000" />
+        <!-- US: main CPU (16 banks of 16 KB, then the fixed 32 KB at 8000-FFFF), character ROM, sprite ROM (0x60000), i8751 MCU ROM (4 KB), sound ROM (32 KB) -->
+        <part zip="gondo.zip" name="dt01.f5" crc="c39bb877" />
+        <part zip="gondou.zip" name="dt02.f6" crc="bb5e674b" />
+        <part zip="gondou.zip" name="dt03.f7" crc="99c32b13" />
+        <part repeat="0x10000">FF</part>
+        <part zip="gondou.zip" name="dt00.f3" crc="a8cf9118" />
+        <part zip="gondou.zip" name="dt14.b18" crc="4bef16e1" />
+        <part zip="gondo.zip" name="dt19.f13" crc="da2abe4b" />
+        <part zip="gondou.zip" name="dt20.f15" crc="42d01002" />
+        <part zip="gondo.zip" name="dt16.f9" crc="e9955d8f" />
+        <part zip="gondou.zip" name="dt18.f12" crc="c0c5df1c" />
+        <part zip="gondo.zip" name="dt15.f8" crc="a54b2eb6" />
+        <part zip="gondou.zip" name="dt17.f11" crc="3bbcff0d" />
+        <part zip="gondo.zip" name="dt21.f16" crc="1c5f682d" />
+        <part zip="gondou.zip" name="dt22.f18" crc="c1876a5f" />
+        <part zip="gondou.zip" name="dt-a.b1" crc="03abceeb" />
+        <part zip="gondo.zip" name="dt05-e.h5" crc="ec08aa29" />
+        <!-- World: main CPU (16 banks of 16 KB, then the fixed 32 KB at 8000-FFFF), character ROM, sprite ROM (0x60000), i8751 MCU ROM (4 KB), sound ROM (32 KB) -->
+        <part zip="gondo.zip" name="dt01.f5" crc="c39bb877" />
+        <part zip="gondo.zip" name="dt02.f6" crc="925307a4" />
+        <part zip="gondo.zip" name="dt03-e.f7" crc="ee7475eb" />
+        <part repeat="0x10000">FF</part>
+        <part zip="gondo.zip" name="dt00-e.f3" crc="912a7eee" />
+        <part zip="gondo.zip" name="dt14-e.b18" crc="00cbe9c8" />
+        <part zip="gondo.zip" name="dt19.f13" crc="da2abe4b" />
+        <part zip="gondo.zip" name="dt20-e.f15" crc="0eef7f56" />
+        <part zip="gondo.zip" name="dt16.f9" crc="e9955d8f" />
+        <part zip="gondo.zip" name="dt18-e.f12" crc="2b2d1468" />
+        <part zip="gondo.zip" name="dt15.f8" crc="a54b2eb6" />
+        <part zip="gondo.zip" name="dt17-e.f11" crc="75ae349a" />
+        <part zip="gondo.zip" name="dt21.f16" crc="1c5f682d" />
+        <part zip="gondo.zip" name="dt22-e.f18" crc="c8ffb148" />
+        <part zip="gondo.zip" name="dt-e.b1" crc="0d0532ec" />
+        <part zip="gondo.zip" name="dt05-e.h5" crc="ec08aa29" />
+        <!-- Japan: main CPU (16 banks of 16 KB, then the fixed 32 KB at 8000-FFFF), character ROM, sprite ROM (0x60000), i8751 MCU ROM (4 KB), sound ROM (32 KB) -->
+        <part zip="gondo.zip" name="dt01.f5" crc="c39bb877" />
+        <part zip="gondo.zip" name="dt02.f6" crc="925307a4" />
+        <part zip="makyosen.zip" name="ds03.f7" crc="9c0fcbf6" />
+        <part repeat="0x10000">FF</part>
+        <part zip="makyosen.zip" name="ds00.f3" crc="33bb16fe" />
+        <part zip="gondo.zip" name="dt14-e.b18" crc="00cbe9c8" />
+        <part zip="gondo.zip" name="dt19.f13" crc="da2abe4b" />
+        <part zip="gondo.zip" name="dt20-e.f15" crc="0eef7f56" />
+        <part zip="gondo.zip" name="dt16.f9" crc="e9955d8f" />
+        <part zip="gondo.zip" name="dt18-e.f12" crc="2b2d1468" />
+        <part zip="gondo.zip" name="dt15.f8" crc="a54b2eb6" />
+        <part zip="gondo.zip" name="dt17-e.f11" crc="75ae349a" />
+        <part zip="gondo.zip" name="dt21.f16" crc="1c5f682d" />
+        <part zip="gondo.zip" name="dt22-e.f18" crc="c8ffb148" />
+        <part zip="makyosen.zip" name="ds.b1" crc="08f36e35" />
+        <part zip="makyosen.zip" name="ds05.h5" crc="e6e28ca9" />
+    </rom>
+</misterromdescription>
