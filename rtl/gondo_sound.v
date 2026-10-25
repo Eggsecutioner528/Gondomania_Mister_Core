@@ -157,8 +157,8 @@ module gondo_sound (
     // with MAME's SSG : FM route ratio of 1 : 2, scaled like the FM gain: 54 * 32 / 2 / 64 = 13.5.
     // A replay of a MAME gameplay run (tools/mame_sndlog.lua, sim_core tb_snd) showed: the music is the YM3526, the sound effects are the YM2203 FM voices
     // (the SSG is never used by this game), and 54 / 29 reproduce MAME's balance. The effects are hard to hear next to the music, so on the user's request
-    // the FM gain is raised by 1.6 (54 -> 86); the Sound Settings page can lower either chip again.
-    localparam signed [7:0] G_FM = 8'sd86, G_OPL = 8'sd29;
+    // the FM gain is raised by 1.6 (54 -> 86), and again by 2 (86 -> 172) for the v1.0.1 release; the Sound Settings page can lower either chip again.
+    localparam signed [8:0] G_FM = 9'sd172, G_OPL = 9'sd58;   // v1.0.1: effects (FM) and music (YM3526) both twice as loud as in v1.0.0
     localparam        [7:0] G_PSG = 8'd13;
     // volume index -> gain in sixteenths (16 = 100 percent)
     function [5:0] gl(input [3:0] i);

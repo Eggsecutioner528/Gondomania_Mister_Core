@@ -16,7 +16,6 @@ Data East's 1987 arcade shooter **Gondomania** and its Japanese release **Makyou
 | <img src="docs/readme/icons/trophy.png" height="72"> | **High scores** | Load by themselves, save with one button, can be reset to the original table. Each version keeps its own |
 | <img src="docs/readme/icons/crt.png" height="72"> | **Picture** | HDMI (rotated for a normal TV) and analog CRT (rotated, sized and smoothed from the OSD, or the raw sideways 15 kHz picture for a monitor on its side) |
 | <img src="docs/readme/icons/speaker.png" height="72"> | **Sound** | YM2203 effects and YM3526 music, with a volume for each, a master volume and a Treble option |
-| <img src="docs/readme/icons/gear.png" height="72"> | **Service Mode** | An OSD switch that restarts the game into its test mode |
 
 ## The three versions
 
@@ -56,7 +55,7 @@ The controls and the items of the arcade game are explained on the translated fl
 
 ## The OSD at a glance
 
-Open the OSD with the button on your controller or **F12** on a keyboard. The first choice of every option is the factory setting. The game reads its DIP switches when it starts. Changing Service Mode, Lives or Difficulty restarts the game for you; after changing any other DIP option (coinage, demo sounds, flip screen, continues) use Reset in the OSD. Every reset holds the whole core for at least 100 ms, like a power cycle.
+Open the OSD with the button on your controller or **F12** on a keyboard. The first choice of every option is the factory setting. The game reads its DIP switches when it starts. Changing Lives or Difficulty restarts the game for you; after changing any other DIP option (coinage, demo sounds, flip screen, continues) use Reset in the OSD. Every reset holds the whole core for at least 100 ms, like a power cycle.
 
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | |
 |:-:|---|---|
@@ -64,9 +63,8 @@ Open the OSD with the button on your controller or **F12** on a keyboard. The fi
 | <img src="docs/readme/icons/tv.png" height="72"> | **Video** | Separate options for HDMI and for the analog CRT output. The CRT options do nothing on HDMI and the other way round |
 | <img src="docs/readme/icons/size.png" height="72"> | **CRT Size** | 16 sizes, from 195x208 up to 217x232 and down to 105x112. CRT Smoothing keeps the scaled picture even; turn it Off for plain pixels |
 | <img src="docs/readme/icons/tv.png" height="72"> | **VGA Scaler** | Off by default. When On, the analog port carries the HDMI picture instead of the raw 15 kHz raster, so a VGA or other 31 kHz monitor works |
-| <img src="docs/readme/icons/speaker.png" height="72"> | **Sound Settings** | Master, Music and Effects volume from Off up to 200 percent (100 percent is the original mix), and a Treble option |
+| <img src="docs/readme/icons/speaker.png" height="72"> | **Sound Settings** | Master, Music and Effects volume from Off up to 200 percent (100 percent is the default mix), and a Treble option |
 | <img src="docs/readme/icons/gear.png" height="72"> | **DIP Switches** | Coinage for both players, lives (including Infinite), difficulty, continues, demo sounds, flip screen |
-| <img src="docs/readme/icons/gear.png" height="72"> | **Service Mode** | Under the DIP switches. Restarts the game into its test mode when On, and back into the game when Off |
 
 ## Install
 

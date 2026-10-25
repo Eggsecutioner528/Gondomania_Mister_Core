@@ -131,9 +131,6 @@ localparam CONF_STR = {
 	"P2O[17:16],Lives,3,5,1,Infinite;",
 	"P2O[19:18],Difficulty,Normal,Easy,Hard,Very Hard;",
 	"P2O[20],Allow Continue,Yes,No;",
-	// Service Mode holds the service switch (i8751 port 3 bit 4) closed: the game starts in its test mode. Changing it restarts the game, like the real board
-	// would after the service switch is thrown at power on. There is no Service button.
-	"P2O[21],Service Mode,Off,On;",
 	"-;",
 	// High scores (rtl/gondo_nvram.v): the button saves the BEST 10 table of the running version to the MiSTer (status bit 62, a trigger). A saved table is put
 	// back by itself after every boot; nothing is ever saved without pressing the button. Clear High Scores is a page that asks the question: No (first, so it is
@@ -223,13 +220,12 @@ pll pll
 wire sys_reset = RESET | status[0] | buttons[1];
 // held in reset while the ROMs download, while the selected game version is copied into the block RAMs, and until the PLL is locked
 wire vsel_hold;
-// A change of the Service Mode, Lives or Difficulty option restarts the game (the game reads its switches at boot only), so the new setting applies at once.
-reg        svc_q = 1'b0;
+// A change of the Lives or Difficulty option restarts the game (the game reads its switches at boot only), so the new setting applies at once.
 reg  [1:0] lives_q = 2'd0, diff_q = 2'd0;
-always @(posedge clk_sys) begin svc_q <= status[21]; lives_q <= status[17:16]; diff_q <= status[19:18]; end
-wire svc_chg = (status[21] != svc_q) | (status[17:16] != lives_q) | (status[19:18] != diff_q);
+always @(posedge clk_sys) begin lives_q <= status[17:16]; diff_q <= status[19:18]; end
+wire svc_chg = (status[17:16] != lives_q) | (status[19:18] != diff_q);
 // Power down style reset. The real board's reset (a power on reset chip, 47 ohm and 4.7 uF into Schmitt inverters) lasts about 20 ms after the supply is good; here every
-// reset request (OSD, download, version copy, Service Mode change, PLL) holds the whole core in reset for at least 100 ms, so every part restarts cleanly as after a power
+// reset request (OSD, download, version copy, Lives or Difficulty change, PLL) holds the whole core in reset for at least 100 ms, so every part restarts cleanly as after a power
 // cycle (an OSD reset was seen to leave the music dropped for a few seconds with a short pulse).
 wire reset_req = sys_reset | ioctl_download | vsel_hold | ~pll_locked | svc_chg;
 reg [22:0] rst_cnt = 23'd0;
@@ -359,7 +355,7 @@ assign AUDIO_R = snd_audio;
 wire [7:0] dsw0 = {1'b1, ~status[14], ~status[13], 1'b1, ~status[12:11], ~status[10:9]};
 wire [7:0] dsw1 = {3'b111, status[20], ~status[19:18], ~status[17:16]};
 
-// Standard arcade keyboard keys: 5 and 6 coins, 1 and 2 starts (decoded from the PS/2 key events the framework delivers). Service is the OSD DIP option Service Mode.
+// Standard arcade keyboard keys: 5 and 6 coins, 1 and 2 starts (decoded from the PS/2 key events the framework delivers). There is no service button: the service line of the original is only a credit button and the game has no test mode.
 reg        k_coin1 = 0, k_coin2 = 0, k_st1 = 0, k_st2 = 0, k_stb = 0;
 reg        k_up = 0, k_dn = 0, k_lf = 0, k_rt = 0, k_b1 = 0, k_b2 = 0, k_tl = 0, k_tr = 0;   // player 1: arrows, Ctrl, Alt, Z, X (as MAME)
 always @(posedge clk_sys) if (ps2_key[10] != k_stb) begin
@@ -390,7 +386,7 @@ wire       vbl_start;
 gondo_inputs inputs (
 	.clk(clk_sys), .rst(reset), .frame_tick(vbl_start),
 	.joy1(joy1_eff), .joy2(joy2_eff),
-	.service(status[21]),
+	.service(1'b0),                 // the service line is a credit button on the real board, not a test mode switch: not used
 	.io_380a(io_380a), .io_380b(io_380b), .io_380c(io_380c), .io_380d(io_380d), .io_380e(io_380e), .io_380f(io_380f),
 	.coin_p3(coin_p3)
 );
